@@ -38,9 +38,7 @@ public class FacultyManagementSystemGUI {
                 JButton button = new JButton("OK");
                 button.setBounds(120,60,70,20);
                 button.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-                button.addActionListener(actionEvent2 -> {
-                    popup.dispose();
-                });
+                button.addActionListener(actionEvent2 -> popup.dispose());
                 popup.add(button);
 
                 popup.setLayout(null);
@@ -59,9 +57,7 @@ public class FacultyManagementSystemGUI {
             JButton button = new JButton("OK");
             button.setBounds(170,60,70,20);
             button.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-            button.addActionListener(actionEvent2 -> {
-                popup.dispose();
-            });
+            button.addActionListener(actionEvent2 -> popup.dispose());
             popup.add(button);
 
             popup.setLayout(null);
@@ -318,6 +314,7 @@ public class FacultyManagementSystemGUI {
             String q = String.format("insert into facul values (%d, '%s', '%s', '%s', '%s', '%s', %f);", id, name, gender,
                     phoneNum, email, department, salary);
             try {
+                assert statement != null;
                 statement.executeUpdate(q);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
@@ -383,7 +380,7 @@ public class FacultyManagementSystemGUI {
         submitButton.addActionListener(actionEvent -> {
             int id = Integer.parseInt(idVal.getText());
             String q = String.format("select * from facul where id = %d;", id);
-            Statement statement = null;
+            Statement statement;
             try {
                 statement = this.con.createStatement();
                 ResultSet resultSet = statement.executeQuery(q);
@@ -403,9 +400,7 @@ public class FacultyManagementSystemGUI {
                     JButton button = new JButton("OK");
                     button.setBounds(120,60,70,20);
                     button.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-                    button.addActionListener(actionEvent2 -> {
-                        popup.dispose();
-                    });
+                    button.addActionListener(actionEvent2 -> popup.dispose());
                     popup.add(button);
 
                     popup.setLayout(null);
@@ -438,6 +433,7 @@ public class FacultyManagementSystemGUI {
         }
 
         String q = String.format("select * from facul where id = %d;",id);
+        assert statement != null;
         ResultSet resultSet = statement.executeQuery(q);
         resultSet.next();
         JLabel nameLabel = new JLabel("Name");
@@ -546,6 +542,7 @@ public class FacultyManagementSystemGUI {
                             "department = '%s', salary = %s where id = %d;", name, genderValSelectedItem,
                     phoneNum, email, department, salary, id);
             try {
+                assert statemnt != null;
                 statemnt.executeUpdate(query);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
@@ -611,7 +608,7 @@ public class FacultyManagementSystemGUI {
         submitButton.addActionListener(actionEvent -> {
             int id = Integer.parseInt(idVal.getText());
             String q = String.format("select * from facul where id = %d;", id);
-            Statement statement = null;
+            Statement statement;
             try {
                 statement = this.con.createStatement();
                 ResultSet resultSet = statement.executeQuery(q);
@@ -634,9 +631,7 @@ public class FacultyManagementSystemGUI {
                     JButton button = new JButton("OK");
                     button.setBounds(120,60,70,20);
                     button.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-                    button.addActionListener(actionEvent2 -> {
-                        popup.dispose();
-                    });
+                    button.addActionListener(actionEvent2 -> popup.dispose());
                     popup.add(button);
 
                     popup.setLayout(null);
@@ -709,9 +704,7 @@ public class FacultyManagementSystemGUI {
         deleteEmpButton.setBounds(400, 410, 300, 40);
         deleteEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         deleteEmpButton.setFocusPainted(false);
-        deleteEmpButton.addActionListener(deleteEvent -> {
-            deleteFaculty();
-        });
+        deleteEmpButton.addActionListener(deleteEvent -> deleteFaculty());
         menuFrame.add(deleteEmpButton);
 
         JButton exitButton = new JButton("Exit");
@@ -719,9 +712,7 @@ public class FacultyManagementSystemGUI {
         exitButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         exitButton.setFocusPainted(false);
 
-        exitButton.addActionListener(actionEvent -> {
-            menuFrame.dispose();
-        });
+        exitButton.addActionListener(actionEvent -> menuFrame.dispose());
         menuFrame.add(exitButton);
 
 
