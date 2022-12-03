@@ -734,9 +734,7 @@ public class FacultyManagementSystemGUI {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-//        gets the required driver
         Class.forName("com.mysql.cj.jdbc.Driver");
-//        creates connection with sql
         String dbName = "faculty";
         String db_username = "root";
         String db_password = "root";
