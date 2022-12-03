@@ -32,12 +32,12 @@ public class FacultyManagementSystemGUI {
                 JFrame popup = new JFrame("Invalid password");
                 JLabel popupMsg = new JLabel("The password you entered is invalid.");
                 popupMsg.setBounds(20,10,300,50);
-                popupMsg.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+                popupMsg.setFont(new Font("Times New Roman", Font.PLAIN, 25));
                 popup.add(popupMsg);
 
                 JButton button = new JButton("OK");
                 button.setBounds(120,60,70,20);
-                button.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+                button.setFont(new Font("Times New Roman", Font.PLAIN, 25));
                 button.addActionListener(actionEvent2 -> {
                     popup.dispose();
                 });
@@ -53,12 +53,12 @@ public class FacultyManagementSystemGUI {
             JFrame popup = new JFrame("Invalid username");
             JLabel popupMsg = new JLabel("The username you entered does not exist.");
             popupMsg.setBounds(20,10,500,50);
-            popupMsg.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            popupMsg.setFont(new Font("Times New Roman", Font.PLAIN, 25));
             popup.add(popupMsg);
 
             JButton button = new JButton("OK");
             button.setBounds(170,60,70,20);
-            button.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            button.setFont(new Font("Times New Roman", Font.PLAIN, 25));
             button.addActionListener(actionEvent2 -> {
                 popup.dispose();
             });
@@ -91,46 +91,46 @@ public class FacultyManagementSystemGUI {
             JPanel facultyCard = new JPanel();
 
             JLabel idLabel = new JLabel("ID");
-            idLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            idLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel idVal = new JLabel(String.valueOf(resultSet.getInt(1)));
-            idVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            idVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel nameLabel = new JLabel("Name");
-            nameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            nameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel nameVal = new JLabel(resultSet.getString(2));
-            nameVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            nameVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel genderLabel = new JLabel("Gender");
-            genderLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            genderLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel genderVal = new JLabel(resultSet.getString(3));
-            genderVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            genderVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel phoneLabel = new JLabel("Phone Number");
-            phoneLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            phoneLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel phoneVal = new JLabel(resultSet.getString(4));
-            phoneVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            phoneVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel emailLabel = new JLabel("Email");
-            emailLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            emailLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel emailVal = new JLabel(resultSet.getString(5));
-            emailVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            emailVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel departmentLabel = new JLabel("Department");
-            departmentLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            departmentLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel departmentVal = new JLabel(resultSet.getString(6));
-            departmentVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            departmentVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel salaryLabel = new JLabel("Salary");
-            salaryLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            salaryLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             JLabel salaryVal = new JLabel(String.valueOf(resultSet.getDouble(7)));
-            salaryVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+            salaryVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
             facultyCard.add(idLabel);
             facultyCard.add(idVal);
@@ -159,7 +159,7 @@ public class FacultyManagementSystemGUI {
 
         JPanel buttonPanel = new JPanel();
         JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         backButton.setBounds(450, 30, 200,50);
         backButton.setFocusPainted(false);
 
@@ -198,10 +198,10 @@ public class FacultyManagementSystemGUI {
         JPanel panel=new JPanel();
 
         JLabel idLabel = new JLabel("Enter ID");
-        idLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        idLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JTextField idVal = new JTextField("");
-        idVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        idVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         idVal.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
@@ -213,40 +213,40 @@ public class FacultyManagementSystemGUI {
         });
 
         JLabel nameLabel = new JLabel("Enter Name");
-        nameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        nameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JTextField nameVal = new JTextField("");
-        nameVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        nameVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JLabel genderLabel = new JLabel("Enter gender");
-        genderLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        genderLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JComboBox<String> genderVal = new JComboBox<>(new String[]{"Male", "Female"});
-        genderVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        genderVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JLabel phoneLabel = new JLabel("Enter Phone Number");
-        phoneLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        phoneLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JTextField phoneVal = new JTextField("");
-        phoneVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        phoneVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JLabel emailLabel = new JLabel("Enter Email Address");
-        emailLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        emailLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JTextField emailVal = new JTextField("");
-        emailVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        emailVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JLabel departmentLabel = new JLabel("Enter Department");
-        departmentLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        departmentLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JTextField departmentVal = new JTextField("");
-        departmentVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        departmentVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JLabel salaryLabel = new JLabel("Enter Salary ($)");
-        salaryLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        salaryLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JTextField salaryVal = new JTextField("");
-        salaryVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        salaryVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         salaryVal.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
@@ -284,7 +284,7 @@ public class FacultyManagementSystemGUI {
         panel.setBorder(new EmptyBorder(20, 50, 20, 50));
 
         JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         backButton.setBounds(450, 30, 200,50);
         backButton.setFocusPainted(false);
 
@@ -295,7 +295,7 @@ public class FacultyManagementSystemGUI {
         panel.add(backButton);
 
         JButton submitButton = new JButton("Submit");
-        submitButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        submitButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         submitButton.setBounds(450, 30, 200,50);
         submitButton.setFocusPainted(false);
 
@@ -364,7 +364,7 @@ public class FacultyManagementSystemGUI {
         });
 
         JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         backButton.setBounds(275, 400, 150,40);
         backButton.setFocusPainted(false);
 
@@ -376,7 +376,7 @@ public class FacultyManagementSystemGUI {
         frame.add(backButton);
 
         JButton submitButton = new JButton("Submit");
-        submitButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        submitButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         submitButton.setBounds(525, 400, 150,40);
         submitButton.setFocusPainted(false);
 
@@ -397,12 +397,12 @@ public class FacultyManagementSystemGUI {
                     JFrame popup = new JFrame("Invalid ID");
                     JLabel popupMsg = new JLabel("The ID you entered is invalid.");
                     popupMsg.setBounds(20,10,300,50);
-                    popupMsg.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+                    popupMsg.setFont(new Font("Times New Roman", Font.PLAIN, 25));
                     popup.add(popupMsg);
 
                     JButton button = new JButton("OK");
                     button.setBounds(120,60,70,20);
-                    button.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+                    button.setFont(new Font("Times New Roman", Font.PLAIN, 25));
                     button.addActionListener(actionEvent2 -> {
                         popup.dispose();
                     });
@@ -441,42 +441,42 @@ public class FacultyManagementSystemGUI {
         ResultSet resultSet = statement.executeQuery(q);
         resultSet.next();
         JLabel nameLabel = new JLabel("Name");
-        nameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        nameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JTextField nameVal = new JTextField(resultSet.getString(2));
-        nameVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        nameVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JLabel genderLabel = new JLabel("Gender");
-        genderLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        genderLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         String gender = resultSet.getString(3);
         JComboBox<String> genderVal = new JComboBox<>(new String[]{"Male", "Female"});
         genderVal.setSelectedIndex(gender.equals("Male") ? 0 : 1 );
-        genderVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        genderVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JLabel phoneLabel = new JLabel("Phone Number");
-        phoneLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        phoneLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JTextField phoneVal = new JTextField(resultSet.getString(4));
-        phoneVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        phoneVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JLabel emailLabel = new JLabel("Email");
-        emailLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        emailLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JTextField emailVal = new JTextField(resultSet.getString(5));
-        emailVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        emailVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JLabel departmentLabel = new JLabel("Department");
-        departmentLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        departmentLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JTextField departmentVal = new JTextField(resultSet.getString(6));
-        departmentVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        departmentVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JLabel salaryLabel = new JLabel("Salary");
-        salaryLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        salaryLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         JTextField salaryVal = new JTextField(String.valueOf(resultSet.getDouble(7)));
-        salaryVal.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        salaryVal.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 
         salaryVal.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
@@ -512,7 +512,7 @@ public class FacultyManagementSystemGUI {
         panel.setBorder(new EmptyBorder(20, 50, 20, 50));
 
         JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         backButton.setBounds(450, 30, 200,50);
         backButton.setFocusPainted(false);
 
@@ -523,7 +523,7 @@ public class FacultyManagementSystemGUI {
         panel.add(backButton);
 
         JButton submitButton = new JButton("Submit");
-        submitButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        submitButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         submitButton.setBounds(450, 30, 200,50);
         submitButton.setFocusPainted(false);
 
@@ -592,7 +592,7 @@ public class FacultyManagementSystemGUI {
         });
 
         JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         backButton.setBounds(275, 400, 150,40);
         backButton.setFocusPainted(false);
 
@@ -604,7 +604,7 @@ public class FacultyManagementSystemGUI {
         frame.add(backButton);
 
         JButton submitButton = new JButton("Delete");
-        submitButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        submitButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         submitButton.setBounds(525, 400, 150,40);
         submitButton.setFocusPainted(false);
 
@@ -628,12 +628,12 @@ public class FacultyManagementSystemGUI {
                     JFrame popup = new JFrame("Invalid ID");
                     JLabel popupMsg = new JLabel("The ID you entered is invalid.");
                     popupMsg.setBounds(20,10,300,50);
-                    popupMsg.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+                    popupMsg.setFont(new Font("Times New Roman", Font.PLAIN, 25));
                     popup.add(popupMsg);
 
                     JButton button = new JButton("OK");
                     button.setBounds(120,60,70,20);
-                    button.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+                    button.setFont(new Font("Times New Roman", Font.PLAIN, 25));
                     button.addActionListener(actionEvent2 -> {
                         popup.dispose();
                     });
@@ -668,7 +668,7 @@ public class FacultyManagementSystemGUI {
 
         JButton viewEmpButton = new JButton("View all faculty");
         viewEmpButton.setBounds(400, 200, 300, 40);
-        viewEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        viewEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         viewEmpButton.setFocusPainted(false);
         viewEmpButton.addActionListener(actionEvent -> {
             try {
@@ -681,7 +681,7 @@ public class FacultyManagementSystemGUI {
 
         JButton addEmpButton = new JButton("Add a faculty");
         addEmpButton.setBounds(400, 270, 300, 40);
-        addEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        addEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         addEmpButton.setFocusPainted(false);
         addEmpButton.addActionListener(actionEvent -> {
             try {
@@ -694,7 +694,7 @@ public class FacultyManagementSystemGUI {
 
         JButton editEmpButton = new JButton("Edit a faculty");
         editEmpButton.setBounds(400, 340, 300, 40);
-        editEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        editEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         editEmpButton.setFocusPainted(false);
         editEmpButton.addActionListener(actionEvent -> {
             try {
@@ -707,7 +707,7 @@ public class FacultyManagementSystemGUI {
 
         JButton deleteEmpButton = new JButton("Delete a faculty");
         deleteEmpButton.setBounds(400, 410, 300, 40);
-        deleteEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        deleteEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         deleteEmpButton.setFocusPainted(false);
         deleteEmpButton.addActionListener(deleteEvent -> {
             deleteFaculty();
@@ -716,7 +716,7 @@ public class FacultyManagementSystemGUI {
 
         JButton exitButton = new JButton("Exit");
         exitButton.setBounds(400, 480, 300, 40);
-        exitButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        exitButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         exitButton.setFocusPainted(false);
 
         exitButton.addActionListener(actionEvent -> {
@@ -751,7 +751,7 @@ public class FacultyManagementSystemGUI {
         fmsgui.loginFrame.add(usernameLabel);
 
         JTextField usernameField = new JTextField();
-        usernameField.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        usernameField.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         usernameField.setBounds(450,150,420,50);
         fmsgui.loginFrame.add(usernameField);
 
@@ -761,7 +761,7 @@ public class FacultyManagementSystemGUI {
         fmsgui.loginFrame.add(passwordLabel);
 
         JPasswordField passwordField = new JPasswordField();
-        passwordField.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        passwordField.setFont(new Font("Times New Roman", Font.PLAIN, 25));
         passwordField.setBounds(450,250,420,50);
         fmsgui.loginFrame.add(passwordField);
 
