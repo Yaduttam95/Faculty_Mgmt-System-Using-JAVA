@@ -22,9 +22,9 @@ public class FacultyManagementSystemGUI {
         Statement statement = this.con.createStatement();
         String q = String.format("select password from admin where username = '%s';", username);
         ResultSet resultSet = statement.executeQuery(q);
-//        gets us password if the username exists
+
         if(resultSet.next()){
-//            compare password with user input
+
             if(resultSet.getString(1).equals(password)){
                 return true;
             }
