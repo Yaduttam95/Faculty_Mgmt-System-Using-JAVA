@@ -1,5 +1,7 @@
 package com.mycompany.facultymanagementsystemgui;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -626,11 +628,19 @@ public class FacultyManagementSystemGUI {
             try {
                 statement = this.con.createStatement();
                 ResultSet resultSet = statement.executeQuery(q);
+
                 if (resultSet.next()) {
                     System.out.println(resultSet.getString(2));
 
                     String deleteQuery = String.format("delete from facul where id = %d;", id);
-                    statement.executeUpdate(deleteQuery);
+
+                    int input = JOptionPane.showConfirmDialog(null, "Do you want to DELETE?", "Select an Option...",
+                            JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE);
+
+                    // 0=Yes, 1=No, 2=Cancel
+                    System.out.println(input);
+                    if(input==0){
+                    statement.executeUpdate(deleteQuery);}
                     menuFrame.setVisible(true);
                     frame.dispose();
 
