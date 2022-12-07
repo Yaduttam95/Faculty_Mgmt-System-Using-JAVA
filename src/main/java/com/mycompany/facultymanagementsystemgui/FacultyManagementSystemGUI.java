@@ -83,6 +83,21 @@ public class FacultyManagementSystemGUI {
         String q = "select * from facul";
         ResultSet resultSet = statement.executeQuery(q);
 
+        JPanel buttonPanel = new JPanel();
+        JButton backButton = new JButton("Back");
+        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+        backButton.setBounds(450, 20, 200,50);
+        backButton.setFocusPainted(false);
+
+        backButton.addActionListener(actionListener -> {
+            frame.dispose();
+            menuFrame.setVisible(true);
+        });
+        buttonPanel.add(backButton);
+        buttonPanel.setLayout(null);
+        buttonPanel.setBackground(new Color(254, 251, 246));
+        panel.add(buttonPanel);
+
         while (resultSet.next()) {
             JPanel facultyCard = new JPanel();
 
@@ -145,7 +160,7 @@ public class FacultyManagementSystemGUI {
 
             facultyCard.setSize(1000, 400);
             facultyCard.setBackground(new Color(166, 209, 230));
-            facultyCard.setBorder(new EmptyBorder(20, 50, 20, 50));
+            facultyCard.setBorder(new EmptyBorder(0, 50, 0, 50));
             GridLayout cardLayout = new GridLayout(0, 2);
             cardLayout.setHgap(5);
             cardLayout.setVgap(10);
@@ -153,28 +168,12 @@ public class FacultyManagementSystemGUI {
             panel.add(facultyCard);
         }
 
-        JPanel buttonPanel = new JPanel();
-        JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-        backButton.setBounds(450, 30, 200,50);
-        backButton.setFocusPainted(false);
 
-        backButton.addActionListener(actionListener -> {
-            frame.dispose();
-            menuFrame.setVisible(true);
-        });
-        buttonPanel.add(backButton);
-        buttonPanel.setLayout(null);
-        buttonPanel.setBackground(new Color(254, 251, 246));
-        panel.add(buttonPanel);
-
-
-        //        panel.setPreferredSize(new Dimension(500,500));
         GridLayout layout = new GridLayout(0, 1);
-        layout.setVgap(30);
+        layout.setVgap(10);
         panel.setLayout(layout);
         panel.setBackground(new Color(254, 251, 246));
-        panel.setBorder(new EmptyBorder(50, 0, 50, 0));
+        panel.setBorder(new EmptyBorder(0, 0, 10, 0));
 
         JScrollPane scrollBar=new JScrollPane(panel,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         frame.add(scrollBar);
@@ -203,8 +202,24 @@ public class FacultyManagementSystemGUI {
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
                 if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                    e.consume();  // if it's not a number, ignore the event
+                    JFrame popup = new JFrame("Invalid ID");
+                    JLabel popupMsg = new JLabel("The ID you entered is invalid.");
+                    popupMsg.setBounds(20,10,300,50);
+                    popupMsg.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+                    popup.add(popupMsg);
+
+                    JButton button = new JButton("OK");
+                    button.setBounds(120,60,70,20);
+                    button.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+                    button.addActionListener(actionEvent2 -> popup.dispose());
+                    popup.add(button);
+
+                    popup.setLayout(null);
+                    popup.setSize(350, 150);
+                    popup.setVisible(true);
+
                 }
+
             }
         });
 
@@ -249,7 +264,7 @@ public class FacultyManagementSystemGUI {
                 char c = e.getKeyChar();
 
                 if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                    e.consume();  // if it's not a number, ignore the event
+                    e.consume();
                 }
             }
         });
@@ -355,7 +370,7 @@ public class FacultyManagementSystemGUI {
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
                 if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                    e.consume();  // if it's not a number, ignore the event
+                    e.consume();
                 }
             }
         });
@@ -386,7 +401,6 @@ public class FacultyManagementSystemGUI {
                 ResultSet resultSet = statement.executeQuery(q);
                 if (resultSet.next()) {
                     System.out.println(resultSet.getString(2));
-                    //                    return true;
                     editFacultyHelper(id, frame);
 
                 }
@@ -479,7 +493,7 @@ public class FacultyManagementSystemGUI {
                 char c = e.getKeyChar();
 
                 if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                    e.consume();  // if it's not a number, ignore the event
+                    e.consume();
                 }
             }
         });
@@ -582,8 +596,8 @@ public class FacultyManagementSystemGUI {
         idVal.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
-                if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                    e.consume();  // if it's not a number, ignore the event
+                if (((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
+                    e.consume();
                 }
             }
         });
@@ -661,51 +675,51 @@ public class FacultyManagementSystemGUI {
         welcomeLabel.setBounds(185,100,800,50);
         menuFrame.add(welcomeLabel);
 
-        JButton viewEmpButton = new JButton("View all faculty");
-        viewEmpButton.setBounds(400, 200, 300, 40);
-        viewEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-        viewEmpButton.setFocusPainted(false);
-        viewEmpButton.addActionListener(actionEvent -> {
+        JButton viewFactButton = new JButton("View all faculty");
+        viewFactButton.setBounds(400, 200, 300, 40);
+        viewFactButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+        viewFactButton.setFocusPainted(false);
+        viewFactButton.addActionListener(actionEvent -> {
             try {
                 viewFaculty();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         });
-        menuFrame.add(viewEmpButton);
+        menuFrame.add(viewFactButton);
 
-        JButton addEmpButton = new JButton("Add a faculty");
-        addEmpButton.setBounds(400, 270, 300, 40);
-        addEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-        addEmpButton.setFocusPainted(false);
-        addEmpButton.addActionListener(actionEvent -> {
+        JButton addFactButton = new JButton("Add a faculty");
+        addFactButton.setBounds(400, 270, 300, 40);
+        addFactButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+        addFactButton.setFocusPainted(false);
+        addFactButton.addActionListener(actionEvent -> {
             try {
                 addFaculty();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         });
-        menuFrame.add(addEmpButton);
+        menuFrame.add(addFactButton);
 
-        JButton editEmpButton = new JButton("Edit a faculty");
-        editEmpButton.setBounds(400, 340, 300, 40);
-        editEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-        editEmpButton.setFocusPainted(false);
-        editEmpButton.addActionListener(actionEvent -> {
+        JButton editfactButton = new JButton("Edit a faculty");
+        editfactButton.setBounds(400, 340, 300, 40);
+        editfactButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+        editfactButton.setFocusPainted(false);
+        editfactButton.addActionListener(actionEvent -> {
             try {
                 editFaculty();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         });
-        menuFrame.add(editEmpButton);
+        menuFrame.add(editfactButton);
 
-        JButton deleteEmpButton = new JButton("Delete a faculty");
-        deleteEmpButton.setBounds(400, 410, 300, 40);
-        deleteEmpButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-        deleteEmpButton.setFocusPainted(false);
-        deleteEmpButton.addActionListener(deleteEvent -> deleteFaculty());
-        menuFrame.add(deleteEmpButton);
+        JButton deleteFactButton = new JButton("Delete a faculty");
+        deleteFactButton.setBounds(400, 410, 300, 40);
+        deleteFactButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+        deleteFactButton.setFocusPainted(false);
+        deleteFactButton.addActionListener(deleteEvent -> deleteFaculty());
+        menuFrame.add(deleteFactButton);
 
         JButton exitButton = new JButton("Exit");
         exitButton.setBounds(400, 480, 300, 40);
@@ -718,8 +732,8 @@ public class FacultyManagementSystemGUI {
 
         menuFrame.setSize(1100,750);
         menuFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        menuFrame.setLayout(null);//using no layout managers
-        menuFrame.setVisible(true);//making the frame visible
+        menuFrame.setLayout(null);
+        menuFrame.setVisible(true);
 
     }
 
