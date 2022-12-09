@@ -632,7 +632,7 @@ public class FacultyManagementSystemGUI {
 
                     String deleteQuery = String.format("delete from facul where id = %d;", id);
 
-                    int input = JOptionPane.showConfirmDialog(null, "Do you want to DELETE?", "Select an Option...",
+                    int input = JOptionPane.showConfirmDialog(null, "CONFIRM YOU WANT TO DELETE?", "Delete Confirmation",
                             JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE);
 
                     // 0=Yes, 1=No, 2=Cancel
