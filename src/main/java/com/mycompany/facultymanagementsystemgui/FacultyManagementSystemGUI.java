@@ -17,7 +17,6 @@ public class FacultyManagementSystemGUI {
         this.con = con;
     }
 
-
     public boolean login(String username, String password) throws SQLException {
         Statement statement = this.con.createStatement();
         String q = String.format("select password from admin where username = '%s';", username);
@@ -183,7 +182,6 @@ public class FacultyManagementSystemGUI {
         frame.setVisible(true);
 
     }
-
 
     public void addFaculty() throws SQLException  {
 
