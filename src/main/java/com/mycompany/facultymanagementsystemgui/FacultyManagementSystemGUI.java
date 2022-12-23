@@ -672,7 +672,6 @@ public class FacultyManagementSystemGUI {
         frame.setVisible(true);
     }
 
-
     public void mainMenu(){
         menuFrame = new JFrame("Faculty Management System");
 
