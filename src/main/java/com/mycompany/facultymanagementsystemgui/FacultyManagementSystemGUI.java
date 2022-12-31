@@ -11,6 +11,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 public class FacultyManagementSystemGUI {
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     Connection con;
     FacultyManagementSystemGUI(Connection con){
@@ -76,26 +77,17 @@ public class FacultyManagementSystemGUI {
         menuFrame.setVisible(false);
 
         JFrame frame=new JFrame("Faculty Records");
+
+        int x = (screenSize.width - 1100) / 2;
+        int y = (screenSize.height - 794) / 2;
+
+        frame.setLocation(x,y);
+
         JPanel panel=new JPanel();
 
         Statement statement = this.con.createStatement();
         String q = "select * from facul";
         ResultSet resultSet = statement.executeQuery(q);
-
-        JPanel buttonPanel = new JPanel();
-        JButton backButton = new JButton("Back");
-        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-        backButton.setBounds(450, 20, 200,50);
-        backButton.setFocusPainted(false);
-
-        backButton.addActionListener(actionListener -> {
-            frame.dispose();
-            menuFrame.setVisible(true);
-        });
-        buttonPanel.add(backButton);
-        buttonPanel.setLayout(null);
-        buttonPanel.setBackground(new Color(254, 251, 246));
-        panel.add(buttonPanel);
 
         while (resultSet.next()) {
             JPanel facultyCard = new JPanel();
@@ -159,13 +151,29 @@ public class FacultyManagementSystemGUI {
 
             facultyCard.setSize(1000, 400);
             facultyCard.setBackground(new Color(166, 209, 230));
-            facultyCard.setBorder(new EmptyBorder(0, 50, 0, 50));
+            facultyCard.setBorder(new EmptyBorder(10, 50, 10, 50));
             GridLayout cardLayout = new GridLayout(0, 2);
             cardLayout.setHgap(5);
             cardLayout.setVgap(10);
             facultyCard.setLayout(cardLayout);
             panel.add(facultyCard);
         }
+
+
+        JPanel buttonPanel = new JPanel();
+        JButton backButton = new JButton("Back");
+        backButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+        backButton.setBounds(450, 20, 200,50);
+        backButton.setFocusPainted(false);
+
+        backButton.addActionListener(actionListener -> {
+            frame.dispose();
+            menuFrame.setVisible(true);
+        });
+        buttonPanel.add(backButton);
+        buttonPanel.setLayout(null);
+        buttonPanel.setBackground(new Color(254, 251, 246));
+        panel.add(buttonPanel);
 
 
         GridLayout layout = new GridLayout(0, 1);
@@ -176,6 +184,7 @@ public class FacultyManagementSystemGUI {
 
         JScrollPane scrollBar=new JScrollPane(panel,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         frame.add(scrollBar);
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(1100,750));
         frame.pack();
@@ -189,6 +198,10 @@ public class FacultyManagementSystemGUI {
 
         JFrame frame=new JFrame("Faculty Records");
         JPanel panel=new JPanel();
+        int x = (screenSize.width - 1100) / 2;
+        int y = (screenSize.height - 794) / 2;
+
+        frame.setLocation(x,y);
 
         JLabel idLabel = new JLabel("Enter ID");
         idLabel.setFont(new Font("Times New Roman", Font.PLAIN, 25));
@@ -354,6 +367,10 @@ public class FacultyManagementSystemGUI {
         menuFrame.setVisible(false);
 
         JFrame frame = new JFrame("Edit Faculty");
+        int x = (screenSize.width - 1100) / 2;
+        int y = (screenSize.height - 794) / 2;
+
+        frame.setLocation(x,y);
 
         JLabel label = new JLabel("Enter faculty id");
         label.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -582,6 +599,10 @@ public class FacultyManagementSystemGUI {
 
         JFrame frame = new JFrame("Delete Faculty");
 
+        int x = (screenSize.width - 1100) / 2;
+        int y = (screenSize.height - 794) / 2;
+
+        frame.setLocation(x,y);
         JLabel label = new JLabel("Enter faculty id");
         label.setFont(new Font("Times New Roman", Font.BOLD, 20));
         label.setBounds(250,200,200,50);
@@ -666,7 +687,6 @@ public class FacultyManagementSystemGUI {
         });
 
         frame.add(submitButton);
-
         frame.setLayout(null);
         frame.setSize(new Dimension(1100,750));
         frame.setVisible(true);
@@ -737,6 +757,7 @@ public class FacultyManagementSystemGUI {
 
         menuFrame.setSize(1100,750);
         menuFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        menuFrame.setLocationRelativeTo(null);
         menuFrame.setLayout(null);
         menuFrame.setVisible(true);
 
@@ -799,6 +820,7 @@ public class FacultyManagementSystemGUI {
         fmsgui.loginFrame.setSize(1100,750);
         fmsgui.loginFrame.setLayout(null);
         fmsgui.loginFrame.setVisible(true);
+        fmsgui.loginFrame.setLocationRelativeTo(null);
         fmsgui.loginFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }
